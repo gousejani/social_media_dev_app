@@ -8,6 +8,7 @@ connectDB();
 
 // Init Middle ware
 app.use(express.json({extended:false}));
+
 // Routes
 app.get('/',(req,res)=>{
     res.send('API running');
