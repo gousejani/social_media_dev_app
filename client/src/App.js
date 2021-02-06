@@ -16,6 +16,8 @@ import CreateProfile from './components/profile-form/CreateProfile';
 import EditProfile from './components/profile-form/EditProfile';
 
 import PrivateRoute from './components/routing/PrivateRoute';
+import AddExperience from './components/profile-form/AddExperience';
+import AddEducation from './components/profile-form/AddEducation';
 
 if (localStorage.token) {
 	setAuthToken(localStorage.token);
@@ -30,6 +32,7 @@ function App() {
 			<Router>
 				<Fragment>
 					<Navbar />
+
 					<Route exact path="/" component={Landing} />
 					<section className="container">
 						<Alert />
@@ -46,6 +49,16 @@ function App() {
 								exact
 								path="/edit-profile"
 								component={EditProfile}
+							/>
+							<PrivateRoute
+								exact
+								path="/add-experience"
+								component={AddExperience}
+							/>
+							<PrivateRoute
+								exact
+								path="/add-education"
+								component={AddEducation}
 							/>
 						</Switch>
 					</section>
