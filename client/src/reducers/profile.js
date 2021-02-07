@@ -1,5 +1,6 @@
 import {
 	GET_PROFILE,
+	GET_PROFILES,
 	PROFILE_ERROR,
 	CLEAR_PROFILE,
 	UPDATE_PROFILE,
@@ -26,7 +27,7 @@ export default function (state = initialState, action) {
 				profile: payload,
 				loading: false,
 			};
-		case GET_PROFILE:
+		case GET_PROFILES:
 			return {
 				...state,
 				profiles: payload,
@@ -43,6 +44,7 @@ export default function (state = initialState, action) {
 				...state,
 				error: payload,
 				loading: false,
+				profile: null,
 			};
 		case CLEAR_PROFILE:
 			return {
